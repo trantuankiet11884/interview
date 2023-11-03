@@ -29,9 +29,29 @@
 }
 
 .footer {
-  margin-top: 64px;
+  margin-top: 128px;
 }
 
-.pfoot {
-  white-space: pre-wrap;
+@media (max-width: 576px) {
+  .hero > div {
+    width: 350px;
+  }
+  .mh {
+    font-size: 18px;
+  }
+  .sh {
+    font-size: 8px;
+  }
+  .content {
+    width: 350px;
+  }
+  .header {
+    width: 350px;
+  }
+  .btn-groups {
+    padding-top: 128px;
+  }
+  .footer {
+    margin-top: 2rem;
+  }
 }

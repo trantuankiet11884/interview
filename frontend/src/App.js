@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { jokes } from "./dummyData.js";
 
+const COOKIE_PREFIX = "joke_";
+
 function App() {
   const [jokeIndex, setJokeIndex] = useState(0);
   const [userVotes, setUserVotes] = useState([]);
   const [hasUserVoted, setHasUserVoted] = useState(false);
 
   useEffect(() => {
-    const hasVoted = Cookies.get(`joke_${jokeIndex + 1}_voted`);
+    const hasVoted = Cookies.get(`${COOKIE_PREFIX}${jokeIndex + 1}_voted`);
     if (hasVoted) {
       setHasUserVoted(true);
     }
@@ -23,7 +25,7 @@ function App() {
         ];
         setUserVotes(updatedUserVotes);
 
-        Cookies.set(`joke_${jokeIndex}_voted`, true);
+        Cookies.set(`${COOKIE_PREFIX}${jokeIndex}_voted`, true);
 
         setJokeIndex(jokeIndex + 1);
         setHasUserVoted(false);
@@ -62,10 +64,10 @@ function App() {
           style={{ height: "200px" }}
         >
           <div>
-            <p className="h3 text-white">A joke a day keeps the doctor away</p>
-          </div>
-          <div>
-            <span className="text-white h8">
+            <p className="h3 text-white mh">
+              A joke a day keeps the doctor away
+            </p>
+            <span className="text-white h8 sh">
               If you joke wrong way, your teeth have to pay. (Serious)
             </span>
           </div>
@@ -75,14 +77,14 @@ function App() {
             <>
               <p>{jokes[jokeIndex].content}</p>
               <div className="d-flex align-items-center justify-content-center">
-                <hr style={{ width: "50%" }} />
+                <hr style={{ width: "50%" }} className="d-none d-sm-block" />
               </div>
               {hasUserVoted ? (
                 <p className="text-center">
                   You've already voted for this joke.
                 </p>
               ) : (
-                <div className="d-flex align-items-center justify-content-center gap-2 mt-3">
+                <div className="btn-groups d-flex align-items-center justify-content-center gap-2 mt-3">
                   <button
                     onClick={() => handleVote("like")}
                     className="button-primary"
@@ -105,7 +107,7 @@ function App() {
           )}
         </div>
         <div className=" footer border rounded-bottom-1 p-4">
-          <div className=" container d-flex ">
+          <div className=" container">
             <div className="text-center ">
               <p className=" fw-light ">
                 This website is created as part of Hlsolutions program. The
