@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.h8 {
+  font-size: 13px;
+}
+
+.button-primary {
+  background-color: #0d6efd;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 250px;
+  height: 45px;
+  box-shadow: 1px 2px #0d6efd;
+}
+
+.button-success {
+  background-color: #04aa6d;
+  border: none;
+  outline: none;
+  width: 250px;
+  height: 45px;
+  color: #fff;
+  box-shadow: 1px 2px #04aa6d;
+}
+
+.footer {
+  margin-top: 64px;
+}
+
+.pfoot {
+  white-space: pre-wrap;
+}
