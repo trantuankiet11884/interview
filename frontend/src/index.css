@@ -5,36 +5,49 @@
 }
 
 .h8 {
-  font-size: 13px;
+  font-size: 12px;
+}
+
+.fw-light {
+  color: #4b463e;
 }
 
 .button-primary {
-  background-color: #0d6efd;
+  background-color: #478ddf;
   border: none;
   outline: none;
   color: #fff;
-  width: 250px;
+  width: 225px;
   height: 45px;
-  box-shadow: 1px 2px #0d6efd;
+  box-shadow: 1px 2px #478ddf;
+  font-weight: 500;
 }
 
 .button-success {
-  background-color: #04aa6d;
+  background-color: #2cb163;
   border: none;
   outline: none;
-  width: 250px;
+  width: 225px;
   height: 45px;
   color: #fff;
-  box-shadow: 1px 2px #04aa6d;
+  box-shadow: 1px 2px #2cb163;
+  font-weight: 500;
+}
+.hero {
+  background-color: #2cb163;
 }
 
 .footer {
-  margin-top: 128px;
+  margin-top: 64px;
 }
 
 @media (max-width: 576px) {
   .hero > div {
     width: 350px;
+  }
+
+  .logo {
+    margin-left: 60px;
   }
   .mh {
     font-size: 18px;
@@ -46,7 +59,7 @@
     width: 350px;
   }
   .header {
-    width: 350px;
+    width: 420px;
   }
   .btn-groups {
     padding-top: 128px;
@@ -54,4 +67,25 @@
   .footer {
     margin-top: 2rem;
   }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 875px;
+  }
+}
+
+.text-xs {
+  font-size: 12px;
+}
+
+.text-sm {
+  font-size: 14px;
+}
+
+.text-lg {
+  font-size: 18px;
 }
